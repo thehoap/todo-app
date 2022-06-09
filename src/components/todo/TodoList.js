@@ -62,7 +62,7 @@ const TodoList = () => {
                                 checked={todo.completed}
                                 onChange={handleTodoUpdate}
                             />
-                            <label className="todo-title" for={todo.id}>
+                            <label className="todo-title" htmlFor={todo.id}>
                                 {todo.title}
                             </label>
                             <ion-icon
