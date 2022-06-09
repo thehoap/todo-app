@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+$fontFamily: "Lato", sans-serif;
+
+$primaryColor: #ea5959;
+$secondaryColor: #ffffff;
+$textColor: #5a5a5a;
+$grey: #f3f3f3;
+$black: #000;
+
+$fontSizeNormal: 1rem;
+$fontSizeMedium: 1.125rem;
+$fontSizeLarge: 1.5rem;
+
+$borderRadius: 8px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fontFamily;
+    font-size: $fontSizeNormal;
+    line-height: 1.6;
+    color: $textColor;
+    background-color: $primaryColor;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img {
+    width: 100%;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+button,
+textarea,
+input {
+    font-family: $fontFamily;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+ion-icon {
+    cursor: pointer;
+}
+
+.todo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    width: 100%;
+    height: 500px;
+    background-color: $secondaryColor;
+    border-radius: $borderRadius;
+    padding: 1rem 3rem;
+
+    .heading {
+        font-size: $fontSizeLarge;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    &-add {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 1rem;
+
+        & * {
+            border-radius: $borderRadius;
+        }
+    }
+
+    &-input {
+        color: $textColor;
+        background-color: $grey;
+        padding: 0.6rem 1.2rem;
+        flex-grow: 1;
+    }
+
+    &-button {
+        color: $secondaryColor;
+        font-size: $fontSizeNormal;
+        font-weight: bold;
+        background-color: $primaryColor;
+        transition: all 0.2s linear;
+        border: 1px solid $primaryColor;
+        padding: 0.4rem 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $secondaryColor;
+            color: $primaryColor;
+        }
+    }
+
+    &-list {
+        overflow-y: auto;
+        max-height: 70%;
+    }
+
+    &-item {
+        font-size: $fontSizeMedium;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 0.4rem;
+    }
+
+    &-checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        appearance: none;
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        background-color: $secondaryColor;
+        border: 2px solid $primaryColor;
+        border-radius: 4px;
+        transition: all 0.2 linear;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(234, 89, 89, 0.4);
+        }
+
+        &:after {
+            content: "\2714";
+            font-size: $fontSizeNormal;
+            color: $secondaryColor;
+            display: none;
+        }
+
+        &:checked {
+            background-color: $primaryColor;
+            &::after {
+                display: block;
+            }
+        }
+    }
+
+    &-title {
+        flex-grow: 1;
+    }
+
+    ion-icon {
+        font-size: $fontSizeLarge;
+        margin-right: 8px;
+
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+}
+
+::-webkit-scrollbar-track {
+    background-color: $grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    background-color: $grey;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $primaryColor;
+}
