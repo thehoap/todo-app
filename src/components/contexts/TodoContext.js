@@ -151,11 +151,17 @@ const TodoContextProvider = (prop) => {
     };
 
     const todoAdd = (title, completed) => {
-        setTodoList((prev) => [...prev, { id: prev.length + 1, title, completed }]);
+        setTodoList((prev) => [
+            ...prev,
+            { id: prev.length + 1, title, completed },
+        ]);
     };
 
     const todoUpdate = (id, updatedTodo) => {
-       
+        console.log(
+            "🚀 ~ file: TodoContext.js ~ line 158 ~ todoUpdate ~ updatedTodo",
+            updatedTodo
+        );
     };
 
     return (
