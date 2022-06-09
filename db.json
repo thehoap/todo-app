@@ -1,69 +1,69 @@
 {
-  "todos": [
-    {
-      "id": 1,
-      "title": "delectus aut autem",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "title": "quis ut nam facilis et officia qui",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "title": "fugiat veniam minus",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "title": "et porro tempora",
-      "completed": true
-    },
-    {
-      "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-      "completed": true,
-      "id": 5
-    },
-    {
-      "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "completed": true,
-      "id": 6
-    },
-    {
-      "title": "illo expedita consequatur quia in",
-      "completed": true,
-      "id": 7
-    },
-    {
-      "title": "quo adipisci enim quam ut ab",
-      "completed": false,
-      "id": 8
-    },
-    {
-      "title": "molestiae perspiciatis ipsa",
-      "completed": false,
-      "id": 9
-    },
-    {
-      "title": "illo expedita consequatur quia in",
-      "completed": true,
-      "id": 10
-    },
-    {
-      "title": "illo expedita consequatur quia in",
-      "completed": false,
-      "id": 12
-    },
-    {
-      "title": "Thanh toán tiền điện",
-      "completed": true,
-      "id": 13
-    },
-    {
-      "title": "Trả tiền phòng",
-      "completed": true,
-      "id": 15
-    }
-  ]
+    "todos": [
+        {
+            "title": "Mua trứng, thịt, cá cho cả tuần",
+            "completed": true,
+            "id": 1
+        },
+        {
+            "title": "Mua rau củ quả cho 4 ngày",
+            "completed": true,
+            "id": 2
+        },
+        {
+            "title": "Đổ xăng trước 15h cả tăng giá",
+            "completed": true,
+            "id": 3
+        },
+        {
+            "title": "Thay nhớt cho xe",
+            "completed": false,
+            "id": 4
+        },
+        {
+            "title": "Mua 10 gói mì tôm (Kool, Hảo Hảo)",
+            "completed": true,
+            "id": 5
+        },
+        {
+            "title": "Quét nhà, lau nhà",
+            "completed": false,
+            "id": 6
+        },
+        {
+            "title": "Thay ga và vỏ gối, giặt chăn",
+            "completed": true,
+            "id": 7
+        },
+        {
+            "title": "Giặt áo quần, khăn tắm",
+            "completed": true,
+            "id": 8
+        },
+        {
+            "title": "Ôn thi Kiểm thử phần mềm",
+            "completed": false,
+            "id": 9
+        },
+        {
+            "title": "Hoàn thành chức năng Gửi thông báo cho Đồ án CNPM",
+            "completed": true,
+            "id": 10
+        },
+        {
+            "title": "Build resume web bỏ vào CV đi thực tập",
+            "completed": true,
+            "id": 12
+        },
+        {
+            "title": "Thanh toán tiền điện",
+            "completed": false,
+            "id": 13
+        },
+        {
+            "title": "Nhận đơn sữa tắm mới trên Shopee",
+            "completed": true,
+            "id": 15
+        }
+    ]
 }
