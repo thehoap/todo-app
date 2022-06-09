@@ -132,29 +132,17 @@ const TodoContextProvider = (prop) => {
         {
             title: "Build resume web bỏ vào CV đi thực tập",
             completed: true,
-<<<<<<< HEAD
             id: 11,
-=======
-            id: 12,
->>>>>>> a9162d57d2fb324071f879c325db5fd9ec101a43
         },
         {
             title: "Thanh toán tiền điện",
             completed: false,
-<<<<<<< HEAD
             id: 12,
-=======
-            id: 13,
->>>>>>> a9162d57d2fb324071f879c325db5fd9ec101a43
         },
         {
             title: "Nhận đơn sữa tắm mới trên Shopee",
             completed: true,
-<<<<<<< HEAD
             id: 13,
-=======
-            id: 15,
->>>>>>> a9162d57d2fb324071f879c325db5fd9ec101a43
         },
     ]);
 
@@ -163,11 +151,7 @@ const TodoContextProvider = (prop) => {
     };
 
     const todoAdd = (title, completed) => {
-<<<<<<< HEAD
         setTodoList((prev) => [...prev, { id: prev.length + 1, title, completed }]);
-=======
-        setTodoList((prev) => [...prev, { id: prev.length, title, completed }]);
->>>>>>> a9162d57d2fb324071f879c325db5fd9ec101a43
     };
 
     const todoUpdate = (id, updatedTodo) => {
