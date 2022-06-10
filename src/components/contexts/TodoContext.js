@@ -76,78 +76,83 @@ export const TodoContext = createContext();
 //         </TodoContext.Provider>
 //     );
 // };
+const initTodoList = [
+    {
+        title: "Mua trứng, thịt, cá cho cả tuần",
+        completed: true,
+        id: 1,
+    },
+    {
+        title: "Mua rau củ quả cho 4 ngày",
+        completed: true,
+        id: 2,
+    },
+    {
+        title: "Đổ xăng trước 15h cả tăng giá",
+        completed: true,
+        id: 3,
+    },
+    {
+        title: "Thay nhớt cho xe",
+        completed: false,
+        id: 4,
+    },
+    {
+        title: "Mua 10 gói mì tôm (Kool, Hảo Hảo)",
+        completed: true,
+        id: 5,
+    },
+    {
+        title: "Quét nhà, lau nhà",
+        completed: false,
+        id: 6,
+    },
+    {
+        title: "Thay ga và vỏ gối, giặt chăn",
+        completed: true,
+        id: 7,
+    },
+    {
+        title: "Giặt áo quần, khăn tắm",
+        completed: true,
+        id: 8,
+    },
+    {
+        title: "Ôn thi Kiểm thử phần mềm",
+        completed: false,
+        id: 9,
+    },
+    {
+        title: "Hoàn thành chức năng Gửi thông báo cho Đồ án CNPM",
+        completed: true,
+        id: 10,
+    },
+    {
+        title: "Build resume web bỏ vào CV đi thực tập",
+        completed: true,
+        id: 11,
+    },
+    {
+        title: "Thanh toán tiền điện",
+        completed: false,
+        id: 12,
+    },
+    {
+        title: "Nhận đơn sữa tắm mới trên Shopee",
+        completed: true,
+        id: 13,
+    },
+];
 
 const TodoContextProvider = (prop) => {
-    const [todoList, setTodoList] = useState([
-        {
-            title: "Mua trứng, thịt, cá cho cả tuần",
-            completed: true,
-            id: 1,
-        },
-        {
-            title: "Mua rau củ quả cho 4 ngày",
-            completed: true,
-            id: 2,
-        },
-        {
-            title: "Đổ xăng trước 15h cả tăng giá",
-            completed: true,
-            id: 3,
-        },
-        {
-            title: "Thay nhớt cho xe",
-            completed: false,
-            id: 4,
-        },
-        {
-            title: "Mua 10 gói mì tôm (Kool, Hảo Hảo)",
-            completed: true,
-            id: 5,
-        },
-        {
-            title: "Quét nhà, lau nhà",
-            completed: false,
-            id: 6,
-        },
-        {
-            title: "Thay ga và vỏ gối, giặt chăn",
-            completed: true,
-            id: 7,
-        },
-        {
-            title: "Giặt áo quần, khăn tắm",
-            completed: true,
-            id: 8,
-        },
-        {
-            title: "Ôn thi Kiểm thử phần mềm",
-            completed: false,
-            id: 9,
-        },
-        {
-            title: "Hoàn thành chức năng Gửi thông báo cho Đồ án CNPM",
-            completed: true,
-            id: 10,
-        },
-        {
-            title: "Build resume web bỏ vào CV đi thực tập",
-            completed: true,
-            id: 11,
-        },
-        {
-            title: "Thanh toán tiền điện",
-            completed: false,
-            id: 12,
-        },
-        {
-            title: "Nhận đơn sữa tắm mới trên Shopee",
-            completed: true,
-            id: 13,
-        },
-    ]);
+    localStorage.setItem("todoList", JSON.stringify(initTodoList));
+    const [todoList, setTodoList] = useState(
+        JSON.parse(localStorage.getItem("todoList"))
+    );
 
     const todoDelete = (id) => {
         setTodoList((prev) => prev.filter((item) => item.id !== id));
+        localStorage.setItem("todoList", JSON.stringify(todoList));
     };
 
     const todoAdd = (title, completed) => {
@@ -155,13 +160,17 @@ const TodoContextProvider = (prop) => {
             ...prev,
             { id: prev.length + 1, title, completed },
         ]);
+        localStorage.setItem("todoList", JSON.stringify(todoList));
     };
 
     const todoUpdate = (id, updatedTodo) => {
-        console.log(
-            "🚀 ~ file: TodoContext.js ~ line 158 ~ todoUpdate ~ updatedTodo",
-            updatedTodo
-        );
+        const index = id - 1;
+        setTodoList((prev) => [
+            ...prev.slice(0, index),
+            { id: id, title: updatedTodo.title, completed: updatedTodo.completed },
+            ...prev.slice(index + 1),
+        ]);
+        localStorage.setItem("todoList", JSON.stringify(todoList));
     };
 
     return (

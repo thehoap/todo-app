@@ -28,6 +28,8 @@ const TodoList = () => {
         });
     };
 
+    // todoList.sort((a, b) => b.id - a.id);    
+    
     return (
         <div className="todo">
             <h1 className="heading todo-heading">Công việc cần làm</h1>
